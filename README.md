@@ -19,22 +19,22 @@ class Person(models.Model):
     This is valid for all Django ORM queries.
 
     MMC also allows databases to switch in the live system.
-        ```python
-        if Person.objects.count() == N:
-            # from this point, all queries for Person Model will be using DB3
-            # If server/system is reloaded, it will revert to the initial settings.
-            MMC.setdb('DB3')(Person)
-        ```
+```python
+if Person.objects.count() == N:
+    # from this point, all queries for Person Model will be using DB3
+    # If server/system is reloaded, it will revert to the initial settings.
+    MMC.setdb('DB3')(Person)
+```
     
     MMC default methods: 
         @MMC.setdb(databaseName, methods=[save', 'delete', 'refresh_from_db', 'save_base',])
     
     # using(db)
-    ```python
-      p1 = Person.objects.last()    # will get the last object from database 'DB2'
-      p2 = Person.objects.using('NEWDB').last() # will get the last object from database 'NEWDB'
-      p3 = Person.objects.first()   # will get the first object from database 'DB2' again.
-    ```
+```python
+  p1 = Person.objects.last()    # will get the last object from database 'DB2'
+  p2 = Person.objects.using('NEWDB').last() # will get the last object from database 'NEWDB'
+  p3 = Person.objects.first()   # will get the first object from database 'DB2' again.
+```
 
 # MMC Wrapper
 
