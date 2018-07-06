@@ -7,12 +7,12 @@ Database Router to configure and switch databases in a live system for Django mo
         ~ No need MyModel.objects.using(database_name)
     
     Here is how it is used:
-    
-    ```python
-    @MMC.setdb('DB2')
-    class Person(models.Model):
-        name = models.CharField(max_length=30)
-    ```
+
+```python
+@MMC.setdb('DB2')
+class Person(models.Model):
+    name = models.CharField(max_length=30)
+```
 
     p = Person.objects.first()
     p.name, p.save(), Person.objects.filter(), ... -> won't hit the default database but they will hit DB2!
