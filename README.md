@@ -20,10 +20,10 @@ class Person(models.Model):
 
     MMC also allows databases to switch in the live system.
 ```python
-if Person.objects.count() == N:
-    # from this point, all queries for Person Model will be using DB3
+def switch_db(otherDB='DB3'):
+    # from this point, all queries for Person Model will be using otherDB
     # If server/system is reloaded, it will revert to the initial settings.
-    MMC.setdb('DB3')(Person)
+    MMC.setdb(otherDB)(Person)
 ```
     
     MMC default methods: 
