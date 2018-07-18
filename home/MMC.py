@@ -1,5 +1,6 @@
 """
-
+    @author:            Erencan Yilmaz
+    
     The MMC wrapper is used to make Django ORM for only the specified database
         ~ No need DB Router
         ~ No need .using(database_name)
